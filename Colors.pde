@@ -1,4 +1,5 @@
 color purple = #6F2AFE, purpleLight = #F4EFFF;
+color pink = #FF00D5;
 color grayMid = #B5B5B5, grayDark = #404040;
 color black = #000000;
 color white = #FFFFFF;

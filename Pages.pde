@@ -6,12 +6,15 @@ class Pages {
   String APP_INFO = "AI";
   String EDUCATION_LEVEL = "EL";
   String GRADE = "GD";
+  String UNAVAILABLE_PAGE = "UP";
   String PFIRST_CYCLE = "PFCycle", SFIRST_CYCLE = "SFCycle", PSECOND_CYCLE = "PSCycle", SSECOND_CYCLE = "SSCycle" ;
   String EXPERIMENT_OPTIONS = "EO";
   String GUIDE = "GU";
   String EXPERIMENT_AREA = "EA";
   String LAB_REPORT = "LR";
   String OBJECTIVE = "OBJ";
+  String RULES_REGULATI0N = "RR";
+  String PROCEDURE = "PRO";
   String OBANCONCLUSION = "OBANCO";
 
   Pages () {
@@ -25,15 +28,25 @@ class Pages {
       prevPages.append (page);
     } else {
       int pIndex = prevPages.index (page);
-      // Remove pages
-      //prevPages.remove(pIndex + 1);
+      //Remove pages
+      if (prevPages.size() > 1) {
+        for (int a = pIndex; a < prevPages.size (); ) {
+          prevPages.remove(a);
+        }
+      }
     }
   }
   void back () {
     // Back functionality
-    int prevIndex = prevPages.index(page) - 1;
-    String prevpage = prevPages.get(prevIndex);
-    page = prevpage;
+    if (prevPages.size() > 1) {
+      int prevIndex = prevPages.index(page) - 1;
+      prevIndex = constrain (prevIndex, 0, prevPages.size ());
+      String prevpage = prevPages.get(prevIndex);
+      page = prevpage;
+    }
+  }
+  boolean isunavailablePage () {
+    return page.equals (UNAVAILABLE_PAGE);
   }
   boolean isAppInfo () {
     return page.equals (APP_INFO);
@@ -61,6 +74,12 @@ class Pages {
   }
   boolean isObjective () {
     return page.equals (OBJECTIVE);
+  }
+  boolean isRules_Regulation () {
+    return page.equals (RULES_REGULATI0N);
+  }
+  boolean isProcedure () {
+    return page.equals (PROCEDURE);
   }
   boolean isExperimentArea () {
     return page.equals (EXPERIMENT_AREA);

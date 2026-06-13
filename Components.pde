@@ -85,9 +85,9 @@ void componentsKeyPressed () {
     Bg = lerpColor (flask.fillColor, to, factor);
     factor += fixedfactor;
     flask.setFillcolor(Bg);
-  } else if ((key == 'D' || key == 'd') && ppt.withinRegion()) {
+  } else if ((key == 'D' || key == 'd') && ppt.withinRegion() && flask.withinRegion()) {
     ppt = flask.pourFrom (ppt, 0.25);
-    Bg = lerpColor (flask.fillColor, purple, factor_ppt);
+    Bg = lerpColor (flask.fillColor, pink, factor_ppt);
     factor_ppt += fixedfactor_ppt;
     flask.setFillcolor(Bg);
   }
@@ -146,7 +146,6 @@ void componentsMouseReleased () {
   }
   }
 }
-
 void initStand () {
   if (page.isExperimentArea()) {
   stand = new Component ("data/assets/svgs/stand - E.svg", 485, 80);
@@ -207,7 +206,7 @@ void initTallBeakerBase () {
 
 void initTallBeakerAcid () {
   if (page.isExperimentArea()) {
-  tallBeakerAcid = new Component ("data/assets/svgs/tall beaker - E.svg", "data/assets/svgs/tall beaker - E.svg", 1030, 247);
+  tallBeakerAcid = new Component ("data/assets/svgs/tall beaker - E.svg", "data/assets/svgs/tall beaker - E.svg", 999, 247);
   tallBeakerAcid.setRegionPpts(549, 53.82, 581.58, 73.61, 74.32, 52.92, 33, 4);
   tallBeakerAcid.regionToCheck = TOP; 
   tallBeakerAcid.isFillable = true;
@@ -251,7 +250,6 @@ void initLitmusRed () {
   litmusRed.setVolumeProperty(100, 100);
   }
 }
-
 void initLitmusBlue () {
   if (page.isExperimentArea()) {
   litmusBlue = new Component ("data/assets/svgs/litmus - clear.svg", "data/assets/svgs/litmus - clear.svg", 1174, 402);

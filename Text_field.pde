@@ -5,7 +5,7 @@ class TextField {
   String LETTERS = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
   String NUMBERS = "0123456789";
   String SPACE = " ";
-  String NAME_CHARACTERS = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz /.";
+  String NAME_CHARACTERS = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz /.,;:()#^*-+={}[]'<>?0123456789";
 
   float x = 480, y = 180;
   float w = 365, h = 55;
@@ -55,6 +55,13 @@ class TextField {
   }
   TextField (String label, float x, float y) {
     init (label, x, y, w, h);
+  }
+  
+  void draw (float x, float y) {
+    this.x = x;
+    this.y = y;
+    
+    draw ();
   }
 
   void draw () {

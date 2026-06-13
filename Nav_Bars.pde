@@ -7,7 +7,6 @@ class NavBars {
     buttons = new Buttons [0];
     cards = new Cards [0];
   }
-
   void add (String label, color fillColor, float x, float y) {
     buttons = (Buttons []) append (buttons, new Buttons (label, fillColor, x, y));
   }

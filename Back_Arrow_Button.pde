@@ -2,7 +2,7 @@ class  special_Buttons {
   PShape Content;
   color  colour;
   float x, y;
-  float w, h;
+  float w, h, w2;
 
   boolean active;
 
@@ -13,6 +13,7 @@ class  special_Buttons {
     this.y = y;
     
     w = 38;
+    w2 = 94;
     h = 38;
   }
   void setup () {

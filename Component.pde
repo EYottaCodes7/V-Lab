@@ -187,8 +187,10 @@ class Component {
       x = validx;
       y = validy;
     } else if ( x+w  > Tregionx & x + w < Tregionx + TregionW + 24 && y + h > Tregiony && y + h < Tregiony + TregionH + 65) {
+      if ( flask != null && flask.isSelected){
       x = Tvalidx;
       y = Tvalidy - h;
+      }
     }
     //specified region
     else if (y + h < tableTopY || y + h > tableBottomY) {

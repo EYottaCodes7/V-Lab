@@ -3,7 +3,7 @@ CardsContainer cContainer;
 
 float tableTopY = 397;
 float tableBottomY = 555; 
-float Tregionx = 1208, Tregiony= 253, TregionW = 158, TregionH = 224, Tvalidx = 1258, Tvalidy = 477, TvalidW = 99;
+float Tregionx = 1245, Tregiony= 339, TregionW = 121, TregionH = 81, Tvalidx = 1258, Tvalidy = 477, TvalidW = 99;
 
 void initNavBar () {
   // buttons
